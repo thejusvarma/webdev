@@ -1,8 +1,8 @@
-var express     = require("express");
-var app         = express();
-var bodyParser  = require("body-parser");
-const mongoose    = require("mongoose");
-var path = require("path"); 
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+//var path = require("path"); 
 var Sport = require("./models/sportname");
 
 var port = process.env.PORT | 12345;
@@ -15,7 +15,7 @@ mongoose.connection.on('error', err => {
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs");
-app.use(express.static(path.join(__dirname + "public")));
+//app.use(express.static(path.join(__dirname + "public")));
 
 
 //HOMEROUTE
@@ -56,7 +56,7 @@ app.get("/football",function(req,res)
     })
 });
 
-app.listen(port, function()
-{
-    console.log("sports app has started at localhost:" + port);
-});
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}...`); 
+  });
+  
