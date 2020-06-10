@@ -1,12 +1,14 @@
 var express     = require("express");
-var  app         = express();
-var  bodyParser  = require("body-parser");
+var app         = express();
+var bodyParser  = require("body-parser");
 const mongoose    = require("mongoose");
 var path = require("path"); 
 var Sport = require("./models/sportname");
 
+var port = process.env.PORT | 12345;
+
 //CONNECTION TO DB
-mongoose.connect('mongodb://127.0.0.1:27017/sport', {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
 mongoose.connection.on('error', err => {
     logError(err);
 });
@@ -54,8 +56,7 @@ app.get("/football",function(req,res)
     })
 });
 
-let port = 12346;
-app.listen(process.env.PORT | port, process.env.IP, function()
+app.listen(port, function()
 {
     console.log("sports app has started at localhost:" + port);
 });
