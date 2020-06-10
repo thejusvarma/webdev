@@ -1,0 +1,8 @@
+<%- include("partials/header") %>
+
+<% sports.forEach(function(sport){ %>			
+    <h1><%=sport.sportname%> -<%=sport.participantone%> -<%=sport.teamname%> -<%=sport.year%> -<%=sport.branch%></h1>
+
+    <% }); %>
+
+<%- include("partials/footer") %>
