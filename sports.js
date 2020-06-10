@@ -8,10 +8,11 @@ var Sport = require("./models/sportname");
 var port = process.env.PORT | 12345;
 
 //CONNECTION TO DB
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
+/*mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
 mongoose.connection.on('error', err => {
     logError(err);
 });
+*/
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs");
@@ -21,11 +22,13 @@ app.set("view engine","ejs");
 //HOMEROUTE
 app.get("/",function(req,res)
 {
-	Sport.find({},function(err,allsports)
+	/*Sport.find({},function(err,allsports)
     {
         if(err){console.log(err);}
         else{res.render("index.ejs",{sports:allsports});}
     })
+    */
+   res.render("index.ejs");
 });
 
 app.post("/",function(req,res)
