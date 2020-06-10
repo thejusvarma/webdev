@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 //var path = require("path"); 
 var Sport = require("./models/sportname");
 
-var port = process.env.PORT | 12345;
+var port = process.env.PORT;
 
 //CONNECTION TO DB
 /*mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
@@ -18,9 +18,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs");
 //app.use(express.static(path.join(__dirname + "public")));
 
+app.get("/sample", (req,res) => {
+
+    res.render("index.ejs");
+})
 
 //HOMEROUTE
-app.get("/",function(req,res)
+app.get("/", function(req,res)
 {
 	/*Sport.find({},function(err,allsports)
     {
