@@ -9,16 +9,21 @@ var User = require("./models/user");
 var LocalStrategy = require("passport-local");
 var passportLocalMongoose = require("passport-local-mongoose");
 
+var port = process.env.PORT;
+var uristring = process.env.MONGODB_URI;
+
 //CONNECTION TO DB
-mongoose.connect('mongodb://127.0.0.1:27017/sport', {useNewUrlParser: true});
-mongoose.connection.on('error', err => {
-    logError(err);
-});
+mongoose.connect(uristring, function (err, res) {
+    if (err) { 
+      console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+    } else {
+      console.log ('Succeeded connected to: ' + uristring);
+    }
+  });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs");
 app.use(methodOverride("_method"));
-
 
 app.use(require("express-session")({
 	secret: "Sports page",
@@ -33,14 +38,11 @@ passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
-
 //HOMEROUTE
 app.get("/",function(req,res)
 {
 	res.render("index.ejs");
 });
-
 
 //Auth Routes
 //show sign up forms
@@ -58,27 +60,25 @@ app.post("/register", function(req, res){
 			res.redirect("/");
 		})
 	})
-})
-
+});
 
 //LOGIN
 //Render login form
 app.get("/login", function(req, res){
 	res.render("login");
-})
+});
 
 //Login logic
 app.post("/login",passport.authenticate("local",{
 	successRedirect: "/",
 	failureRedirect: "/login"
 }) ,function(req, res){
-	
-})
+});
 
 app.get("/logout", function(req, res){
 	req.logout();
 	res.redirect("/");
-})
+});
 
 //Middleware
 function isLoggedIn(req, res, next){
@@ -97,15 +97,11 @@ app.post("/",function(req,res)
     });
 });
 
-
-
-
 //NEWTEAM ROUTE
 app.get("/newteam", function(req,res)
 {
     res.render("newteam.ejs");
 });
-
 
 //FOOTBALL
 app.get("/football",function(req,res)
@@ -197,7 +193,6 @@ app.put("/view/:id",isLoggedIn, function(req,res)
     })
 });
 
-
 //DELETE ROUTE  
 app.delete("/view/:id",isLoggedIn, function(req,res)
 {
@@ -208,8 +203,6 @@ app.delete("/view/:id",isLoggedIn, function(req,res)
    })
 });
 
-let port = 12346;
-app.listen(process.env.PORT | port, process.env.IP, function()
-{
-    console.log("sports app has started at localhost:" + port);
-});
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}...`); 
+  });
