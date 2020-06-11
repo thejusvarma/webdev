@@ -4,7 +4,7 @@
 <form>
   <div class="up">
 	<div class="ui main text container segment ">
-    <h1 style="text-align:center">Team Details</h1>
+    <h1 style="text-align:center;">Team Details</h1>
 	<div class="form-group">
 		<label for="exampleFormControlInput1">Team Name : </label>
 		<input type="text" class="form-control" placeholder="<%= sports.teamname %>" disabled="disabled">
@@ -83,7 +83,8 @@
     </div>
 </div>
 </form>
-<form id="delete" action="/view/<%=sports._id%>?_method=DELETE" method="POST">
+
+<form style="margin-left: 273px; margin-right: 273px"; id="delete" action="/view/<%=sports._id%>?_method=DELETE" method="POST">
   <button class="ui big fluid red button">Delete</button>
 </form>
 </div>
