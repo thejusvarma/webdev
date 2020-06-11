@@ -1,8 +1,32 @@
 <%- include("partials/header") %>
 
-<% sports.forEach(function(sport){ %>			
-    <h1><%=sport.sportname%> -<%=sport.participantone%> -<%=sport.teamname%> -<%=sport.year%> -<%=sport.branch%></h1>
-
+<div style="padding-top: 100px;" class="ui main container">
+<div class= "contianer col-md-auto ">
+    <div class= "ui center aligned huge header">TEAMS</div>
+<table class="ui selectable  table">
+    <thead>
+      <tr>
+        <th class="center aligned">Team Name</th>
+        <th class="center aligned">Branch</th>
+        <th class="right aligned">Points</th>
+        <th class="right aligned"></th>
+      </tr>
+    </thead>
+    <% sports.forEach(function(sport){%>	
+    <tbody>
+      <tr>
+        <td class="center aligned"><%=sport.teamname%></td>
+        <td class="center aligned"><%=sport.branch%></td>
+        <td class="right aligned"><%=sport.score%> </td>
+        <td class="right aligned"><a href="/view/<%=sport._id%>" class="ui small red button">view more</a></td>
+    </tr>
+      </tr>
+    </tbody>
     <% }); %>
+  </table>
+</div>
+</div>
+
+    
 
 <%- include("partials/footer") %>

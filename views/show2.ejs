@@ -1,0 +1,92 @@
+<%- include("partials/header") %>
+<h1>Hey</h1>
+
+<form>
+  <div class="up">
+	<div class="ui main text container segment ">
+    <h1 style="text-align:center">Team Details</h1>
+	<div class="form-group">
+		<label for="exampleFormControlInput1">Team Name : </label>
+		<input type="text" class="form-control" placeholder="<%= sports.teamname %>" disabled="disabled">
+	  </div>
+		  <div class="form-row">
+		    <div class="col-md-6 mb-3">
+		      <label>Player's name :</label>
+		      <input type="text" class="form-control "  placeholder="<%= sports.participantone%>" disabled="disabled">
+		       <br>
+		       <input type="text" class="form-control " placeholder="<%= sports.participanttwo %>" disabled="disabled">
+		       <br>
+		       <input type="text" class="form-control "  placeholder="<%= sports.participantthree %>" disabled="disabled">
+		       <br>
+		       <input type="text" class="form-control " placeholder="<%= sports.participantfour %>" disabled="disabled">
+		       <br>
+		       <input type="text" class="form-control " placeholder="<%= sports.participantfive %>" disabled="disabled">
+		       <br>
+		       <input type="text" class="form-control " placeholder="<%= sports.participantsix %>" disabled="disabled">
+		       <br>
+		      <div class="valid-feedback">
+		        Looks good!
+		      </div>
+
+		    </div>
+		    <div class="col-md-6 mb-3">
+		    	 <label for="validationServer01">  .  </label>
+		    	 <br>
+		      <input type="text" class="form-control " id="validationServer01" placeholder="<%= sports.participantseven %>" disabled="disabled">
+		       <br>
+		       <input type="text" class="form-control " id="validationServer01" placeholder="<%= sports.participanteight %>" disabled="disabled">
+		       <br>
+		       <input type="text" class="form-control " id="validationServer01"placeholder="<%= sports.participantnine %>" disabled="disabled">
+		       <br>
+		       <input type="text" class="form-control " id="validationServer01"placeholder="<%= sports.participantten %>" disabled="disabled">
+		       <br>
+		       <input type="text" class="form-control " id="validationServer01"placeholder="<%= sports.participanteleven%>" disabled="disabled">
+		  
+		      <div class="valid-feedback">
+		        Looks good!
+		      </div>
+		    </div>
+		  </div>
+
+		<div class="col-md-6 mb-3">
+		<label for="validationServer04">Branch : </label>
+			<select class="custom-select " placeholder="<%= sports.branch %>" disabled="disabled">
+				<option>CSE</option>
+				<option>IT</option>
+				<option>AI</option>
+				<option>ECE</option>
+				<option>EEE</option>
+				<option>MECH</option>
+			</select>
+		</div>
+			<div class="col-md-6 mb-3">
+		<label for="validationServer04">Year : </label>
+		<select class="custom-select " placeholder="<%= sports.year %>" disabled="disabled">
+				<option>2011</option>
+				<option>2012</option>
+				<option>2013</option>
+				<option>2014</option>
+				<option>2015</option>
+				<option>2016</option>
+				<option>2017</option>
+				<option>2018</option>
+				<option>2019</option>
+				<option>2020</option>
+				<option>2021</option>
+		</select>
+	</div>
+  <br>
+  
+
+    <div class="form-group card">
+      <a class="ui big right aligned black button" href="/view/<%=sports._id%>/edit">Edit</a>
+    </div>
+</div>
+</form>
+<form id="delete" action="/view/<%=sports._id%>?_method=DELETE" method="POST">
+  <button class="ui big fluid red button">Delete</button>
+</form>
+</div>
+
+
+<%- include("partials/footer") %>

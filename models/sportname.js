@@ -16,6 +16,7 @@ var sportSchema = new mongoose.Schema({
    participantten: String,
    participanteleven: String,
    branch: String,
+   score: String,
 });
 
 module.exports = mongoose.model("Sport", sportSchema);

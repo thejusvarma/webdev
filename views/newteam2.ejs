@@ -1,0 +1,97 @@
+<%- include("partials/header") %>
+<div class="up">
+<div class="ui main text container segment" >
+        
+		<h1 style="text-align:center">Edit Team Details</h1>
+		<div style="width:100%; margin: 30px auto;">
+			<form class="ui form" action="/view/<%=sports._id%>?_method=PUT" method="POST">
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label"><strong> Team Name </strong></label>
+					<div class="col-sm-10">
+						<input type="text" name="newteam[teamname]" value="<%= sports.teamname %>">	
+					</div>
+                </div>
+
+                <div class="form-group row">
+					<label class="col-sm-2 col-form-label"><strong>Score</strong></label>
+					<div class="col-sm-10">
+						<input type="text" name="newteam[score]" value="<%=sports.score%>">	
+					</div>
+                </div>
+                
+                
+		
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label"><strong> Names</strong></label>
+					<div class="col-sm-10">
+						<input class="form-control card" type="text" name="newteam[participantone]" value="<%= sports.participantone%>">
+						<input class="form-control card" type="text" name="newteam[participanttwo]" value="<%= sports.participanttwo%>">	
+						<input class="form-control card" type="text" name="newteam[participantthree]" value="<%= sports.participantthree%>">	
+						<input class="form-control card" type="text" name="newteam[participantfour]" value="<%= sports.participantfour%>">	
+						<input class="form-control card" type="text" name="newteam[participantfive]" value="<%= sports.participantfive%>">	
+						<input class="form-control card" type="text" name="newteam[participantsix]" value="<%= sports.participantsixe%>">	
+						<input class="form-control card" type="text" name="newteam[participantseven]" value="<%= sports.participantseven%>">	
+						<input class="form-control card" type="text" name="newteam[participanteight]" value="<%= sports.participanteight%>">	
+						<input class="form-control card" type="text" name="newteam[participantnine]" value="<%= sports.participantnine%>">	
+						<input class="form-control card" type="text" name="newteam[participantten]" value="<%= sports.participantten%>">	
+						<input class="form-control card" type="text" name="newteam[participanteleven]" value="<%= sports.participanteleven%>">
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label"><strong> Game </strong></label>
+				<div class="col-md-3">
+				<select class="custom-select" type="text"  name="sports[sportname]" value="<%=sports.sportname%>">
+					<option>Football</option>
+					<option>Cricket</option>
+					<option>Volleyball</option>
+					<option>Basketball</option>
+					<option>Throwball</option>
+					<option>Koko</option>
+				</select>
+				</div>
+				</div>
+				
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label"><strong> Year </strong></label>
+				<div class="col-md-2">
+					<select class="custom-select" type="text" name="sports[year]" value="<%= sports.year%>">
+						<option>2010</option>
+						<option>2011</option>
+						<option>2012</option>
+						<option>2013</option>
+						<option>2014</option>
+						<option>2015</option>
+						<option>2016</option>
+						<option>2017</option>
+						<option>2019</option>
+						<option>2020</option>
+					</select>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label"><strong>Branch</strong></label>
+				<div class="col-md-2">
+					<select class="custom-select" type="text" name="sports[branch]" value="<%= sports.branch%>">
+						<option>CSE</option>
+						<option>ECE</option>
+						<option>IT</option>
+						<option>EEE</option>
+						<option>MECH</option>
+						<option>CIVIL</option>
+						<option>AI</option>
+					</select>
+					</div>
+                </div>
+                <div>
+                    <input class="ui big fluid red button" type="submit">
+                </div>
+                
+			</form>
+		</div>
+</div>
+</div>
+
+
+<%- include("partials/footer") %>

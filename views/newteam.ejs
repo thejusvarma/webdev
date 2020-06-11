@@ -1,51 +1,53 @@
 <%- include("partials/header") %>
-<div class="container" >
-	<div>
+<div class="up">
+<div class="ui main text container segment" >
+	
 		<h1 style="text-align:center">New Team</h1>
-		<div style="width:75%; margin: 30px auto;">
+		<div style="width:100%; margin: 30px auto;">
 			<form action="/" method="POST">
 				
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label"><strong> Team Name -</strong></label>
+					<label class="col-sm-2 col-form-label"><strong> Team Name </strong></label>
 					<div class="col-sm-10">
 						<input class="form-control" type="text" name="newteam[teamname]" placeholder="teamname">	
 					</div>
 				</div>
 				
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label"><strong> Names -</strong></label>
+					<label class="col-sm-2 col-form-label"><strong> Names</strong></label>
 					<div class="col-sm-10">
-						<input class="form-control" type="text" name="newteam[participantone]" placeholder="player 1">
-						<input class="form-control" type="text" name="newteam[participanttwo]" placeholder="player 2">	
-						<input class="form-control" type="text" name="newteam[participantthree]" placeholder="player 3">	
-						<input class="form-control" type="text" name="newteam[participantfour]" placeholder="player 4">	
-						<input class="form-control" type="text" name="newteam[participantfive]" placeholder="player 5">	
-						<input class="form-control" type="text" name="newteam[participantsix]" placeholder="player 6">	
-						<input class="form-control" type="text" name="newteam[participantseven]" placeholder="player 7">	
-						<input class="form-control" type="text" name="newteam[participanteight]" placeholder="player 8">	
-						<input class="form-control" type="text" name="newteam[participantnine]" placeholder="player 9">	
-						<input class="form-control" type="text" name="newteam[participantten]" placeholder="player 10">	
-						<input class="form-control" type="text" name="newteam[participanteleven]" placeholder="player 11">
+						<input class="form-control card" type="text" name="newteam[participantone]" placeholder="player 1">
+						<input class="form-control card" type="text" name="newteam[participanttwo]" placeholder="player 2">	
+						<input class="form-control card" type="text" name="newteam[participantthree]" placeholder="player 3">	
+						<input class="form-control card" type="text" name="newteam[participantfour]" placeholder="player 4">	
+						<input class="form-control card" type="text" name="newteam[participantfive]" placeholder="player 5">	
+						<input class="form-control card" type="text" name="newteam[participantsix]" placeholder="player 6">	
+						<input class="form-control card" type="text" name="newteam[participantseven]" placeholder="player 7">	
+						<input class="form-control card" type="text" name="newteam[participanteight]" placeholder="player 8">	
+						<input class="form-control card" type="text" name="newteam[participantnine]" placeholder="player 9">	
+						<input class="form-control card" type="text" name="newteam[participantten]" placeholder="player 10">	
+						<input class="form-control card" type="text" name="newteam[participanteleven]" placeholder="player 11">
 					</div>
 				</div>
 				
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label"><strong> Game -</strong></label>
+					<label class="col-sm-2 col-form-label"><strong> Game </strong></label>
 				<div class="col-md-3">
-				<select class="form-control" type="text" name="newteam[sportname]" placeholder="Sport Name">
+				<select class="custom-select" type="text" name="newteam[sportname]" placeholder="Sport Name">
 					<option>Football</option>
 					<option>Cricket</option>
 					<option>Volleyball</option>
 					<option>Basketball</option>
+					<option>Throwball</option>
 					<option>Koko</option>
 				</select>
 				</div>
 				</div>
 				
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label"><strong> Year -</strong></label>
+					<label class="col-sm-2 col-form-label"><strong> Year </strong></label>
 				<div class="col-md-2">
-					<select class="form-control" type="text" name="newteam[year]" placeholder="year">
+					<select class="custom-select" type="text" name="newteam[year]" placeholder="year">
 						<option>2010</option>
 						<option>2011</option>
 						<option>2012</option>
@@ -61,9 +63,9 @@
 				</div>
 
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label"><strong>Branch -</strong></label>
+					<label class="col-sm-2 col-form-label"><strong>Branch</strong></label>
 				<div class="col-md-2">
-					<select class="form-control" type="text" name="newteam[branch]" placeholder="branch">
+					<select class="custom-select" type="text" name="newteam[branch]" placeholder="branch">
 						<option>CSE</option>
 						<option>ECE</option>
 						<option>IT</option>
@@ -74,17 +76,17 @@
 					</select>
 					</div>
 				</div>
-
-
-
 			
-				<div class="form-group">
-					<button class="btn btn-lg btn-primary btn-block">SUBMIT</button>
+				<div class="form-group card">
+					<button class="ui big right aligned black button">Submit</button>
 				</div>
-				
+				<div class="form-group card">
+					<a href="/" class="ui big right aligned red button" >back</a>
+				</div>
 			</form>
-			<a href="/">Go back</a>
 		</div>
-	</div>
 </div>
+</div>
+
+
 <%- include("partials/footer") %>
